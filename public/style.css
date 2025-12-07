@@ -1,0 +1,514 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    box-shadow: none !important;
+}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 1px;
+    /* background-color: #333; */
+    background-color: #f9f9f9;
+}
+
+/* START INDEX */
+/* start home */
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url("./images/TU_photo1.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .homeLogo {
+    opacity: 0;
+    animation: homeAni_1 1s forwards ease-in-out;
+}
+
+#home .title {
+    opacity: 0;
+    animation: homeAni_2 1s forwards ease-in-out;
+    animation-delay: .3s;
+}
+
+#home .smallTitle {
+    opacity: 0;
+    animation: homeAni_3 1s forwards ease-in-out;
+    animation-delay: .6s;
+}
+
+#home .signupBtn {
+    font-size: 1.4rem;
+    background-color: #0077b6;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 5px 37px;
+    box-shadow: 3px 3px 0 black;
+    position: relative;
+    transition: .5s;
+    overflow: hidden;
+}
+
+#home .signupBtn:hover {
+    transform: translateY(5px);
+}
+
+#home .signupBtn::before {
+    content: "";
+    display: block;
+    width: 5%;
+    height: 100%;
+    background-color: white;
+    transform: skewX(-20deg);
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: .5;
+
+    transition: .7s;
+}
+
+#home .signupBtn:hover::before {
+    left: 105%;
+}
+
+@keyframes homeAni_1 {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes homeAni_2 {
+    from {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes homeAni_3 {
+    from {
+        transform: translateY(120px);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* end home */
+/* start navbar */
+#navBar_c .nav-link {
+    position: relative;
+}
+
+#navBar_c .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4%;
+    background-color: steelblue;
+    transition: .3s;
+}
+
+#navBar_c .nav-link:hover::before {
+    width: 100%;
+}
+
+/* end navbar */
+/* start login modal */
+#signupModal select,
+.form-control {
+    padding: 10px 5px;
+}
+
+#signupModal .form-control {
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid darkslateblue;
+}
+
+#signupModal .form-control:focus {
+    border-bottom: 1px solid steelblue;
+}
+
+#signupModal .signupSubmitBtn {
+    background-color: rgb(22, 22, 124);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#signupModal .signupSubmitBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 2%;
+    height: 100%;
+    transform: skew(-20deg);
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 1s;
+}
+
+#signupModal .signupSubmitBtn:hover::before {
+    left: 105%;
+}
+
+/* end login modal */
+#signupModal select,
+.form-control {
+    padding: 10px 5px;
+}
+
+#signupModal .form-control {
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid darkslateblue;
+}
+
+#signupModal .form-control:focus {
+    border-bottom: 1px solid steelblue;
+}
+
+#signupModal .loginSubmitBtn {
+    background-color: rgb(22, 22, 124);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#signupModal .loginSubmitBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 2%;
+    height: 100%;
+    transform: skew(-20deg);
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 1s;
+}
+
+#signupModal .loginSubmitBtn:hover::before {
+    left: 105%;
+}
+
+/* END INDEX */
+
+/* START COURSES */
+#courses {
+    margin: 100px 100px;
+}
+
+#courses .instructor_c,
+.lessons_c {
+    color: rgb(129, 129, 129);
+    letter-spacing: 0;
+}
+
+#courses .card-title {
+    letter-spacing: 0;
+}
+
+#courses .openCourseBtn{
+    background-color: rgb(68, 73, 222);
+    border: none;
+    box-shadow: 2px 2px 0 rgb(45, 56, 80);
+    transition: .3s;
+}
+
+#courses .openCourseBtn:hover{
+    transform: translateY(2px);
+}
+
+#courses .card{
+    min-height: 180px;
+}
+
+@media(max-width: 768px) {
+    #courses {
+        margin: 100px 40px;
+    }
+
+    #courses .card {
+        min-height: 170px;
+    }
+}
+
+/* END COURSES */
+
+/* SLIDE PANEL FOR LESSONS */
+#courseOverlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1040;
+}
+
+#coursePanel{
+    z-index: 1050;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    letter-spacing: 0;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform .3s;
+}
+
+.lessonItem_c {
+    padding: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+.lessonItem_c:hover{
+    transform: translateY(2px);
+}
+
+#coursePanel .panelTitle_c{
+    font-size: 1.5rem;
+}
+
+#addLessonBtn{
+    background-color: rgb(53, 107, 154);
+}
+
+/* Add this to the bottom of your style.css */
+
+/* Add this to the bottom of your style.css */
+
+.lessonItem_c {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lessonItem_c:hover {
+    background-color: #e9ecef; /* Light gray on hover */
+    /* transform: translateX(5px); Slight slide effect */
+    border-left: 4px solid #0d6efd !important; /* Blue accent */
+}
+
+
+/* lesson modal */
+.watermarkLogo_c {
+    position: relative;
+    overflow: hidden;
+}
+
+.watermarkLogo_c::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("./images/ChatGPT_Image_Oct_21,_2025,_10_15_54_AM.png"); /* replace with your logo */
+    background-repeat: no-repeat;
+    background-position: center; /* middle */
+    background-size: 250px;      /* adjust size */
+
+    opacity: 0.2;               /* watermark fading */
+    pointer-events: none;        /* avoid blocking clicks */
+}
+
+.editLessonBtn{
+    background: none;
+    border: 1px solid darkblue;
+    transition: all .3s;
+}
+
+.editLessonBtn:hover{
+    background-color: rgb(49, 49, 182);
+    border: 1px solid white;
+    color: #f4f4f4;
+    border-radius: 20px;
+}
+
+.deleteLessonBtn{
+    background: none;
+    border: 1px solid darkblue;
+    color: #000;
+    transition: all .3s;
+}
+
+.deleteLessonBtn:hover{
+    background-color: rgb(203, 51, 54);
+    border: 1px solid white;
+    color: #f4f4f4;
+    border-radius: 20px;
+}
+
+/* 2/12 new codes for discussion */
+/* Slide panel */
+.slide-panel {
+    position: fixed;
+    top: 0;
+    left: 0; /* start visible for design purposes */
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1050; /* above navbar */
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+/* Panel header */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+/* Close button */
+.close-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* 3/12 new codes */
+/* initial hidden state */
+#discussionBoard {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+    overflow-y: auto;
+}
+
+/* visible state */
+#toggleDiscussionBtn{
+    background-color: #1b388f;
+    border: none;
+}
+
+#discussionBoard.active {
+    transform: translateX(0);
+}
+
+#discussionOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1040;
+    display: none;
+}
+
+#discussionPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(100%);  /* start off-screen */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1050;
+    overflow-y: auto;
+    /* remove visibility & opacity */
+}
+
+#discussionPanel.active {
+    transform: translateX(0); /* slide in */
+}
+
+
+#discussionPanel .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+#discussionPanel .close-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Posts & textarea */
+#discussionPanel textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.topic {
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+}
+.topic-text {
+    margin: 0;
+}
+.comments p {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.postBtn_c {
+    padding: 7px 20px;
+    background-color: #1b388f;
+    border: none;
+}
+
+footer div{
+    background-color: #1b388f;
+    padding-top: 17px;
+}
